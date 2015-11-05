@@ -3,20 +3,20 @@
 
 struct quadTreeNode
 {
-	quadTreeNode *tl;
-	quadTreeNode *tr;
-	quadTreeNode *bl;
-	quadTreeNode *br;
+	quadTreeNode** children;
 	bool isLeaf;
-	double x;
-	double y;
+	long long x;
+	long long y;
+    int depth;
+    long long x_square;
+    long long y_square;
 };
 
 class QuadTree {
     public:
         virtual ~QuadTree() {};
-        virtual void insert(double x, double y) = 0;
-        virtual void constructTree(double* x, double* y, int size) = 0;
+        virtual void insert(long long x, long long y) = 0;
+        virtual void constructTree(long long* x, long long* y, int size) = 0;
         quadTreeNode* head = 0;
 }
 #endif 
